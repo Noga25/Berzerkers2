@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Berzerkers2
 {
-    struct Dice
+    public struct Dice
     {
         public uint Scalar;
         public uint BaseDie;
@@ -56,12 +56,25 @@ namespace Berzerkers2
         Elf
     }
 
+    // Enum of the Weather
+    public enum Weather
+    {
+        Rainy,
+        Stormy,
+        Sunny
+    }
+
     public abstract class Unit
     {
         // Properties
         protected abstract int Damage { get; }
         protected abstract int HP { get; }
         protected abstract Race UnitRace { get; }
+        public int CarryingCapacity { get; set; }
+        public Dice HitChance { get; set; }
+        public Dice DefenseRating { get; set; }
+        public Weather WeatherEffect { get; set; }
+
 
         // Methods
         public abstract void Attack(Unit target);
