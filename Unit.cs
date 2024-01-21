@@ -66,15 +66,14 @@ namespace Berzerkers2
 
     public abstract class Unit
     {
-        // Properties
-        protected abstract int Damage { get; }
-        protected abstract int HP { get; }
-        protected abstract Race UnitRace { get; }
-        public int CarryingCapacity { get; set; }
-        public Dice HitChance { get; set; }
-        public Dice DefenseRating { get; set; }
-        public Weather WeatherEffect { get; set; }
-
+        // Existing attributes
+        public abstract int HP { get; set; }
+        public abstract Race UnitRace { get; }
+        public abstract int CarryingCapacity { get; }
+        protected abstract Dice Damage { get; }
+        public abstract Dice HitChance { get; }
+        public abstract Dice DefenseRating { get; }
+        public abstract void WeatherEffect(Weather weather);
 
         // Methods
         public abstract void Attack(Unit target);
