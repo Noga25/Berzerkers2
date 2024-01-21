@@ -1,4 +1,8 @@
-﻿namespace Berzerkers2
+﻿//----c# II (Dor Ben Dor) ----
+//       Noga Levkovitz
+//---------------------------
+
+namespace Berzerkers2
 {
     internal class Program
     {
