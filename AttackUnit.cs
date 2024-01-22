@@ -6,25 +6,6 @@ namespace Berzerkers2
 {
     public abstract class AttackUnit : Unit
     {
-        //public override void Attack(Unit target)
-        //{
-        //    int attackRoll = HitChance.Roll(); // Roll the attack dice
-
-        //    if (attackRoll > target.DefenseRating.Roll())
-        //    {
-        //        // Successful attack
-        //        int damageDealt = attackRoll - Damage.Roll();
-        //        target.HP -= damageDealt;
-
-        //        Console.WriteLine($"{UnitRace} attacked {target.UnitRace} from range for {damageDealt} damage.");
-        //    }
-        //    else
-        //    {
-        //        // Missed attack
-        //        Console.WriteLine($"{UnitRace} missed the ranged attack on {target.UnitRace}.");
-        //    }
-        //}
-
         private static void ApplyWeatherEffect(List<Unit> army, Weather weatherCondition)
         {
             foreach (var unit in army)

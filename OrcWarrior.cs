@@ -10,7 +10,7 @@ namespace Berzerkers2
         public override int HP { get; set; } = 100;
         public override Race UnitRace => Race.Orc;
         protected override float Range => 20;
-        public override int CarryingCapacity => 20;
+        public override int CarryingCapacity => Random.Shared.Next(1, 20);
         protected override Dice Damage => new Dice(2, 7, -1);
         public override Dice HitChance => new Dice(2, 8, -1);
         public override Dice DefenseRating => new Dice(1, 6, 1);
@@ -25,7 +25,7 @@ namespace Berzerkers2
             base.Attack(target);
 
             // Add specific behavior for Orc Warrior's attack, if needed
-            Console.WriteLine("Orc Warrior Slice.");
+            Console.WriteLine("Orc warrior slice");
 
             return;
         }

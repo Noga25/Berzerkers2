@@ -1,10 +1,12 @@
-﻿//----c# II (Dor Ben Dor) ----
-//       Noga Levkovitz
-//---------------------------
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Berzerkers2
 {
-    public sealed class HumanKnight : RangedUnit
+    internal class HumanArcher : RangedUnit
     {
         // Properties
         public override int HP { get; set; } = 100;
@@ -25,7 +27,7 @@ namespace Berzerkers2
             base.Attack(target);
 
             // Add specific behavior for Orc Warrior's attack, if needed
-            Console.WriteLine("Human stab");
+            Console.WriteLine("Human aim");
 
             return;
         }
@@ -41,3 +43,4 @@ namespace Berzerkers2
         }
     }
 }
+
