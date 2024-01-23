@@ -9,7 +9,6 @@ namespace Berzerkers2
         // Properties
         public override int HP { get; set; } = 100;
         public override Race UnitRace => Race.Human;
-        protected override float Range => 20;
         public override int CarryingCapacity => Random.Shared.Next(1, 20);
         protected override Dice Damage => new Dice(2, 7, -1);
         public override Dice HitChance => new Dice(2, 8, -1);

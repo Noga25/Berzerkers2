@@ -7,7 +7,6 @@ namespace Berzerkers2
     public sealed class ElfWizard : RangedUnit
     {
         // Properties
-        protected override float Range => 40;
         public override int HP { get; set; } = 100;
         public override Race UnitRace => Race.Elf;
         public override int CarryingCapacity => Random.Shared.Next(1, 20);
@@ -24,7 +23,6 @@ namespace Berzerkers2
         {
             base.Attack(target);
 
-            // Add specific behavior for Orc Warrior's attack, if needed
             Console.WriteLine("Elf Activate attack magic");
 
             return;

@@ -21,7 +21,6 @@ namespace Berzerkers2
 
             while (army1.Count > 0 && army2.Count > 0)
             {
-                // Each step, a random unit from each side attacks a random unit on the opposing side
                 Unit attacker1 = army1[random.Next(army1.Count)];
                 Unit attacker2 = army2[random.Next(army2.Count)];
 
@@ -36,10 +35,8 @@ namespace Berzerkers2
                     Weather weatherCondition = (Weather)random.Next(Enum.GetValues(typeof(Weather)).Length);
                     ApplyWeatherEffect(army1, weatherCondition);
                     ApplyWeatherEffect(army2, weatherCondition);
-                    steps += 1; // Weather condition lasts for 3 steps
+                    steps += 1;
                 }
-
-                //steps++;
 
                 // Remove dead units
                 army1.RemoveAll(unit => unit.HP <= 0);
