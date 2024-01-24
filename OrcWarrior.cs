@@ -31,7 +31,7 @@ namespace Berzerkers2
         {
             weather = Weather.Rainy;
 
-            Console.WriteLine("Your character has slipped");
+            Console.WriteLine("OrcWarrior has slipped");
 
             HP -= 10;
 

@@ -33,7 +33,7 @@ namespace Berzerkers2
         {
             weather = Weather.Sunny;
 
-            Console.WriteLine("Your character gut burned");
+            Console.WriteLine("HumanArcher character gut burned");
 
             HP -= 10;
 

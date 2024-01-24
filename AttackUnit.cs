@@ -34,6 +34,11 @@ namespace Berzerkers2
                 {
                     Weather weatherCondition = (Weather)random.Next(Enum.GetValues(typeof(Weather)).Length);
                     ApplyWeatherEffect(army1, weatherCondition);
+                    steps += 1;
+                }
+                else if (0.1 < random.NextDouble() && random.NextDouble() < 0.2 && steps < 1)
+                {
+                    Weather weatherCondition = (Weather)random.Next(Enum.GetValues(typeof(Weather)).Length);
                     ApplyWeatherEffect(army2, weatherCondition);
                     steps += 1;
                 }
