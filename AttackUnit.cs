@@ -25,8 +25,16 @@ namespace Berzerkers2
                 Unit attacker2 = army2[random.Next(army2.Count)];
 
                 // Simulate the attack and defend
-                attacker1.Attack(attacker2);
-                attacker2.Attack(attacker1);
+                int RandomNumber = random.Next(2);
+                if (RandomNumber == 0)
+                {
+                    attacker1.Attack(attacker1);
+                }
+
+                else if (RandomNumber == 1)
+                {
+                    attacker2.Attack(attacker2);
+                }
 
 
                 // Check for weather condition
