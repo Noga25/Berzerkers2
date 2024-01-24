@@ -7,7 +7,6 @@ namespace Berzerkers2
     public sealed class HumanKnight : RangedUnit
     {
         // Properties
-        public override int HP { get; set; } = 100;
         public override Race UnitRace => Race.Human;
         public override int CarryingCapacity => Random.Shared.Next(1, 20);
         protected override Dice Damage => new Dice(2, 7, -1);
@@ -17,7 +16,9 @@ namespace Berzerkers2
         // Methods
         public override void Defend(Unit attacker)
         {
-            // Implementation for defending
+            Console.WriteLine("Human Knight shield active");
+
+            Console.WriteLine("Shield: " + DefenseRating.ToString());
         }
         public override void Attack(Unit target)
         {

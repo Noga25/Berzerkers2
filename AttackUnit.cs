@@ -25,17 +25,13 @@ namespace Berzerkers2
                 Unit attacker2 = army2[random.Next(army2.Count)];
 
                 // Simulate the attack and defend
-                int RandomNumber = random.Next(2);
-                if (RandomNumber == 0)
-                {
-                    attacker1.Attack(attacker1);
-                }
+                attacker1.Attack(attacker1);
+                Console.WriteLine($"{attacker1} attacked {attacker2} from range for damage.");
+                attacker1.Defend(attacker2);
 
-                else if (RandomNumber == 1)
-                {
-                    attacker2.Attack(attacker2);
-                }
-
+                attacker2.Attack(attacker2);
+                Console.WriteLine($"{attacker2} attacked {attacker1} from range for damage.");
+                attacker1.Defend(attacker1);
 
                 // Check for weather condition
                 if (random.NextDouble() < 0.1 && steps < 1) 

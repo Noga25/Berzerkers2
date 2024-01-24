@@ -65,8 +65,8 @@ namespace Berzerkers2
     public abstract class Unit
     {
         // Existing attributes
-        public abstract int HP { get; set; }
-        public abstract Race UnitRace { get; }
+        public virtual int HP { get; set; } = 100;
+        public virtual Race UnitRace { get; }
         public abstract int CarryingCapacity { get; }
         protected abstract Dice Damage { get; }
         public abstract Dice HitChance { get; }

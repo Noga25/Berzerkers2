@@ -18,9 +18,7 @@ namespace Berzerkers2
             {
                 // Successful attack
                 int damageDealt = attackRoll - Damage.Roll();
-                target.HP -= damageDealt;
-
-                Console.WriteLine($"{UnitRace} attacked {target.UnitRace} from range for {damageDealt} damage.");
+                target.HP -= damageDealt + DefenseRating.Roll();
             }
             else
             {
