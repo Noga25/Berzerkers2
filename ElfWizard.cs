@@ -8,17 +8,13 @@ namespace Berzerkers2
     {
         // Properties
         public override Race UnitRace => Race.Elf;
-        public override int CarryingCapacity => Random.Shared.Next(1, 20);
-        protected override Dice Damage => new Dice(2, 7, -1);
-        public override Dice HitChance => new Dice(2, 8, -1);
-        public override Dice DefenseRating => new Dice(1, 6, 1);
 
         // Methods
         public override void Defend(Unit attacker)
         {
             Console.WriteLine("Elf Wizard shield active");
 
-            Console.WriteLine("Shield: " + DefenseRating.ToString());
+            Console.WriteLine("Shield: " + DefenseRating.Roll());
         }
         public override void Attack(Unit target)
         {
@@ -37,7 +33,7 @@ namespace Berzerkers2
 
             HP -= 10;
 
-            Console.WriteLine(weather + "you lost 10 HP " + (HP));
+            Console.WriteLine(weather + " you lost 10 HP " + HP);
         }
     }
 }

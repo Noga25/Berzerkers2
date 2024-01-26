@@ -67,10 +67,10 @@ namespace Berzerkers2
         // Existing attributes
         public virtual int HP { get; set; } = 100;
         public virtual Race UnitRace { get; }
-        public abstract int CarryingCapacity { get; }
-        protected abstract Dice Damage { get; }
-        public abstract Dice HitChance { get; }
-        public abstract Dice DefenseRating { get; }
+        public virtual int CarryingCapacity { get; } = Random.Shared.Next(1, 20);
+        protected virtual Dice Damage { get; } = new Dice(2, 7, -1);
+        public virtual Dice HitChance { get; } = new Dice(2, 8, -1);
+        public virtual Dice DefenseRating { get; } = new Dice(1, 6, 1);
         public abstract void WeatherEffect(Weather weather);
 
         // Methods
