@@ -14,7 +14,7 @@ namespace Berzerkers2
             HumanKnight Knights = new();
             HumanArcher Archer = new();
 
-            //Units list
+            //Units lists
             List<Unit> army1 = new List<Unit> { Knights, Archer };
             List<Unit> army2 = new List<Unit> { Warrior, Wizard };
 
