@@ -58,7 +58,13 @@ namespace Berzerkers2
             // Calculate the number of resources stolen by the winning actor
             int totalResourcesStolen = winningArmy.Sum(unit => unit.CarryingCapacity) * steps;
 
-            Console.WriteLine($"The winner is the {winningArmy[0].UnitRace} race!");
+            int length = winningArmy.Count;
+
+            for (int l = 0; l <= length - 1; l++)
+            {
+                Console.WriteLine($"The winner is the {winningArmy[l].UnitRace} !");
+            }
+
             Console.WriteLine($"Resources stolen: {totalResourcesStolen}");
         }
     }

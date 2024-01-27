@@ -6,13 +6,10 @@ namespace Berzerkers2
 {
     public abstract class RangedUnit : Unit
     {
-        //Propetie who set the range
-        //protected abstract float Range { get; }
-
         // Method to ranged attacks
         public override void Attack(Unit target)
         {
-            int attackRoll = HitChance.Roll(); // Roll the attack dice
+            int attackRoll = HitChance.Roll();
 
             if (attackRoll > target.DefenseRating.Roll())
             {
