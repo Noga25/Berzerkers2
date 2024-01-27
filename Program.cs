@@ -8,18 +8,6 @@ namespace Berzerkers2
     {
         static void Main(string[] args)
         {
-            //Units
-            OrcWarrior Warrior = new();
-            ElfWizard Wizard = new();
-            HumanKnight Knights = new();
-            HumanArcher Archer = new();
-
-            //Units lists
-            List<Unit> army1 = new List<Unit> { Knights, Archer };
-            List<Unit> army2 = new List<Unit> { Warrior, Wizard };
-
-            //AttackUnit.Battle(army1, army2);
-
             PrintBattleAndUnits();
         }
 
