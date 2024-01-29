@@ -64,7 +64,7 @@ namespace Berzerkers2
 
     public abstract class Unit
     {
-        // Existing attributes
+        // Propreties
         public virtual int HP { get; set; } = 100;
         public virtual Race UnitRace { get; }
         public virtual int CarryingCapacity { get; } = Random.Shared.Next(1, 20);

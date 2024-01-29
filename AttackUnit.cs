@@ -55,7 +55,7 @@ namespace Berzerkers2
             // Determine the winner
             List<Unit> winningArmy = (army1.Count > 0) ? army1 : army2;
 
-            // Calculate the number of resources stolen by the winning actor
+            // Calculate the number of resources stolen by the winning
             int totalResourcesStolen = winningArmy.Sum(unit => unit.CarryingCapacity) * steps;
 
             int length = winningArmy.Count;
