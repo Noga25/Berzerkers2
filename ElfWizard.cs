@@ -33,7 +33,7 @@ namespace Berzerkers2
 
             HP -= 10;
 
-            Console.WriteLine(weather + " you lost 10 HP " + HP);
+            Console.WriteLine("The weather is " + weather + " ElfWizard lost 10 HP " + HP);
         }
     }
 }
