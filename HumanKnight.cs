@@ -12,21 +12,28 @@ namespace Berzerkers2
         // Methods
         public override void Defend(Unit attacker)
         {
+            //Color yellwo for defend
+            Console.ForegroundColor = ConsoleColor.Yellow;
+
             Console.WriteLine("Human Knight shield active");
 
             Console.WriteLine("Shield: " + DefenseRating.Roll());
+
+            Console.ForegroundColor = ConsoleColor.White;
         }
         public override void Attack(Unit target)
         {
             base.Attack(target);
 
-            // Add specific behavior for Orc Warrior's attack, if needed
             Console.WriteLine("Human stab");
 
             return;
         }
         public override void WeatherEffect(Weather weather)
         {
+            //Color blue for weather
+            Console.ForegroundColor = ConsoleColor.Blue;
+
             weather = Weather.Sunny;
 
             Console.WriteLine("HumanKnight gut burned");
@@ -34,6 +41,8 @@ namespace Berzerkers2
             HP -= 10;
 
             Console.WriteLine("The weather is " + weather + " HumanKnight lost 10 HP " + HP);
+
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }

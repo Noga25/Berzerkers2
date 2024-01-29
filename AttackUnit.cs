@@ -26,11 +26,13 @@ namespace Berzerkers2
 
                 // Simulate the attack and defend
                 attacker1.Attack(attacker1);
-                Console.WriteLine($"{attacker1} attacked {attacker2} from range for damage.");
+                Console.WriteLine($"{attacker1} attacked {attacker2} from range for damage.", Console.ForegroundColor = ConsoleColor.Red);
+                Console.ForegroundColor = ConsoleColor.White;
                 attacker1.Defend(attacker2);
 
                 attacker2.Attack(attacker2);
-                Console.WriteLine($"{attacker2} attacked {attacker1} from range for damage.");
+                Console.WriteLine($"{attacker2} attacked {attacker1} from range for damage.", Console.ForegroundColor = ConsoleColor.Red);
+                Console.ForegroundColor = ConsoleColor.White;
                 attacker1.Defend(attacker1);
 
                 // Check for weather condition
@@ -62,8 +64,10 @@ namespace Berzerkers2
 
             for (int l = 0; l <= length - 1; l++)
             {
-                Console.WriteLine($"The winner is the {winningArmy[l].UnitRace} !");
+                Console.WriteLine($"The winner is the {winningArmy[l].UnitRace} !", Console.ForegroundColor = ConsoleColor.Green);
             }
+
+            Console.ForegroundColor = ConsoleColor.White;
 
             Console.WriteLine($"Resources stolen: {totalResourcesStolen}");
         }
