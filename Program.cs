@@ -33,6 +33,13 @@ namespace Berzerkers2
 
             Console.WriteLine("-----------------------");
 
+            Console.WriteLine("Damage/Attack Status - red", Console.ForegroundColor = ConsoleColor.Red);
+            Console.WriteLine("Defend - yellow", Console.ForegroundColor = ConsoleColor.Yellow);
+            Console.WriteLine("Winner - green", Console.ForegroundColor = ConsoleColor.Green);
+            Console.WriteLine("Resources/Names Of Attacks - white", Console.ForegroundColor = ConsoleColor.White);
+
+            Console.WriteLine("-----------------------");
+
             AttackUnit.Battle(Army1, Army2);
         }
 
