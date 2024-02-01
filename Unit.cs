@@ -4,7 +4,51 @@
 
 namespace Berzerkers2
 {
-    public struct Dice
+    interface IRandomProvider
+    {
+        int Roll(int min, int max);
+    }
+
+    public class Bag 
+    {
+        private List<int> bag;
+        private int currentIndex = 0;
+
+        public Bag(List<int> numbers)
+        {
+            bag = new List<int>(numbers);
+            Shuffle();
+        }
+
+        public int Roll(int min, int max)
+        {
+            if (currentIndex >= bag.Count)
+            {
+                Shuffle();
+                currentIndex = 0;
+            }
+
+            int result = bag[currentIndex];
+            currentIndex++;
+            return result;
+        }
+
+        private void Shuffle()
+        {
+            Random rng = new Random();
+            int n = bag.Count;
+            while (n > 1)
+            {
+                n--;
+                int k = rng.Next(n + 1);
+                int value = bag[k];
+                bag[k] = bag[n];
+                bag[n] = value;
+            }
+        }
+    }
+
+    public struct Dice : IRandomProvider
     {
         public uint Scalar;
         public uint BaseDie;
@@ -17,14 +61,14 @@ namespace Berzerkers2
             Modifier = modifier;
         }
 
-        public int Roll()
+        public int Roll(int min, int max)
         {
             Random random = new Random();
             int result = 0;
 
             for (int i = 0; i < Scalar; i++)
             {
-                result += random.Next(1, (int)BaseDie + 1);
+                result += random.Next(min, max + 1);
             }
 
             return result + Modifier;
@@ -62,7 +106,13 @@ namespace Berzerkers2
         Sunny
     }
 
-    public abstract class Unit
+    public interface IUnit
+    {
+        void Attack(Unit target);
+        void Defend(Unit attacker);
+    }
+
+    public abstract class Unit : IUnit
     {
         // Propreties
         public virtual int HP { get; set; } = 100;
