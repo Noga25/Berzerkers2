@@ -2,6 +2,8 @@
 //       Noga Levkovitz
 //---------------------------
 
+using System.Collections.Generic;
+
 namespace Berzerkers2
 {
     interface IRandomProvider
@@ -9,7 +11,7 @@ namespace Berzerkers2
         int Roll(int min, int max);
     }
 
-    public class Bag 
+    public class Bag : IRandomProvider
     {
         private List<int> bag;
         private int currentIndex = 0;
@@ -47,6 +49,7 @@ namespace Berzerkers2
             }
         }
     }
+    
 
     public struct Dice : IRandomProvider
     {

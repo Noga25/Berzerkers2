@@ -12,12 +12,12 @@ namespace Berzerkers2
             //Color red for attack
             Console.ForegroundColor = ConsoleColor.Red;
 
-            int attackRoll = HitChance.Roll();
+            int attackRoll = HitChance.Roll(0, 10);
 
-            if (attackRoll > target.DefenseRating.Roll())
+            if (attackRoll > target.DefenseRating.Roll(0, 10))
             {
                 // Successful attack
-                int damageDealt = attackRoll - Damage.Roll();
+                int damageDealt = attackRoll - Damage.Roll(0, 10);
                 target.HP -= damageDealt;
             }
             else

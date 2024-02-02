@@ -17,7 +17,7 @@ namespace Berzerkers2
 
             Console.WriteLine("Orc Warrior active shield");
 
-            Console.WriteLine("Shield: " + DefenseRating.Roll());
+            Console.WriteLine("Shield: " + DefenseRating.Roll(0, 10));
 
             Console.ForegroundColor = ConsoleColor.White;
         }
