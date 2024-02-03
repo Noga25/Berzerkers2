@@ -6,6 +6,10 @@ namespace Berzerkers2
 {
     public sealed class ElfWizard : RangedUnit
     {
+        public ElfWizard(IRandomProvider randomProvider) : base(randomProvider)
+        {
+        }
+
         // Properties
         public override Race UnitRace => Race.Elf;
 

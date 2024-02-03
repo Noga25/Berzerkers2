@@ -15,11 +15,13 @@ namespace Berzerkers2
 
         public static void PrintBattleAndUnits()
         {
+            IRandomProvider Dice = new Dice();
+
             //Units
-            OrcWarrior Warrior = new();
-            ElfWizard Wizard = new();
-            HumanKnight Knights = new();
-            HumanArcher Archer = new();
+            OrcWarrior Warrior = new(Dice);
+            ElfWizard Wizard = new(Dice);
+            HumanKnight Knights = new(Dice);
+            HumanArcher Archer = new(Dice);
 
             //Units lists
             IRandomProvider randomProvider = new Bag (new List<int> { 0, 1, 2, 3 });

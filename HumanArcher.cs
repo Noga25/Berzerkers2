@@ -8,6 +8,10 @@ namespace Berzerkers2
 {
     internal class HumanArcher : RangedUnit
     {
+        public HumanArcher(IRandomProvider randomProvider) : base(randomProvider)
+        {
+        }
+
         // Properties
         public override Race UnitRace => Race.Human;
 

@@ -89,21 +89,20 @@ namespace Berzerkers2
         Sunny
     }
 
-    public interface IUnit 
+    public interface IUnit
     {
         void Attack(Unit target);
         void Defend(Unit attacker);
     }
 
-    public abstract class Unit : IUnit
+    public abstract class Unit
     {
-        //Implement random provider to unit
-        //protected IRandomProvider randomProvider;
+        protected IRandomProvider randomProvider;
 
-        //protected Unit(IRandomProvider randomProvider)
-        //{
-        //    this.randomProvider = randomProvider;
-        //}
+        protected Unit(IRandomProvider randomProvider)
+        {
+            this.randomProvider = randomProvider;
+        }
 
         // Propreties
         public virtual int HP { get; set; } = 100;

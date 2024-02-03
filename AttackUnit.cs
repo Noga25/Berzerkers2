@@ -6,6 +6,10 @@ namespace Berzerkers2
 {
     public abstract class AttackUnit : Unit
     {
+        protected AttackUnit(IRandomProvider randomProvider) : base(randomProvider)
+        {
+        }
+
         private static void ApplyWeatherEffect(List<Unit> army, Weather weatherCondition)
         {
             foreach (var unit in army)

@@ -6,6 +6,10 @@ namespace Berzerkers2
 {
     public sealed class HumanKnight : RangedUnit
     {
+        public HumanKnight(IRandomProvider randomProvider) : base(randomProvider)
+        {
+        }
+
         // Properties
         public override Race UnitRace => Race.Human;
 
