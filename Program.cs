@@ -47,9 +47,6 @@ namespace Berzerkers2
                 }
             }
 
-            //List<Unit> Army1 = new List<Unit> { Units[0], Units[1] };
-            //List<Unit> Army2 = new List<Unit> { Units[2], Units[3] };
-
             Console.WriteLine("Your army is: " + Army1[0] + " " + Army1[1]);
 
             Console.WriteLine("Enemy army is: " + Army2[0] + " " + Army2[1]);

@@ -6,47 +6,27 @@ using System.Collections.Generic;
 
 namespace Berzerkers2
 {
-    interface IRandomProvider
+    public interface IRandomProvider
     {
         int Roll(int min, int max);
     }
 
     public class Bag : IRandomProvider
     {
-        private List<int> bag;
-        private int currentIndex = 0;
+        private List<int> numbers;
+        private int currentIndex;
 
         public Bag(List<int> numbers)
         {
-            bag = new List<int>(numbers);
-            Shuffle();
+            this.numbers = numbers;
+            currentIndex = 0;
         }
 
         public int Roll(int min, int max)
         {
-            if (currentIndex >= bag.Count)
-            {
-                Shuffle();
-                currentIndex = 0;
-            }
-
-            int result = bag[currentIndex];
-            currentIndex++;
+            int result = numbers[currentIndex];
+            currentIndex = (currentIndex + 1) % numbers.Count;
             return result;
-        }
-
-        private void Shuffle()
-        {
-            Random rng = new Random();
-            int n = bag.Count;
-            while (n > 1)
-            {
-                n--;
-                int k = rng.Next(n + 1);
-                int value = bag[k];
-                bag[k] = bag[n];
-                bag[n] = value;
-            }
         }
     }
     
@@ -109,7 +89,7 @@ namespace Berzerkers2
         Sunny
     }
 
-    public interface IUnit
+    public interface IUnit 
     {
         void Attack(Unit target);
         void Defend(Unit attacker);
@@ -117,13 +97,21 @@ namespace Berzerkers2
 
     public abstract class Unit : IUnit
     {
+        //Implement random provider to unit
+        //protected IRandomProvider randomProvider;
+
+        //protected Unit(IRandomProvider randomProvider)
+        //{
+        //    this.randomProvider = randomProvider;
+        //}
+
         // Propreties
         public virtual int HP { get; set; } = 100;
         public virtual Race UnitRace { get; }
         public virtual int CarryingCapacity { get; } = Random.Shared.Next(1, 20);
-        protected virtual Dice Damage { get; } = new Dice(2, 7, -1);
-        public virtual Dice HitChance { get; } = new Dice(2, 8, -1);
-        public virtual Dice DefenseRating { get; } = new Dice(1, 6, 1);
+        protected virtual IRandomProvider Damage { get; } = new Dice(2, 7, -1);
+        public virtual IRandomProvider HitChance { get; } = new Dice(2, 8, -1);
+        public virtual IRandomProvider DefenseRating { get; } = new Dice(1, 6, 1);
         public abstract void WeatherEffect(Weather weather);
 
         // Methods
