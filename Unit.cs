@@ -70,10 +70,10 @@ namespace Berzerkers2
 
         protected Unit(Dice dmg, Dice defence)
         {
-            dmg = new Dice(2, 7, -1);
+            //The attack damage
             Damage = dmg;
 
-            defence = new Dice(1, 6, 1);
+            //The defence rating
             DefenseRating = defence;
         }
 
