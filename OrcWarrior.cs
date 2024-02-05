@@ -6,7 +6,7 @@ namespace Berzerkers2
 {
     public sealed class OrcWarrior : RangedUnit
     {
-        public OrcWarrior(IRandomProvider randomProvider) : base(randomProvider)
+        public OrcWarrior(Dice randomProvider) : base(randomProvider)
         {
         }
 

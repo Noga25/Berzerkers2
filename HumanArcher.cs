@@ -8,7 +8,7 @@ namespace Berzerkers2
 {
     internal class HumanArcher : RangedUnit
     {
-        public HumanArcher(IRandomProvider randomProvider) : base(randomProvider)
+        public HumanArcher(Dice randomProvider) : base(randomProvider)
         {
         }
 

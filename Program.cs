@@ -3,6 +3,7 @@
 //---------------------------
 
 using System.Collections.Generic;
+using static Berzerkers2.Interface;
 
 namespace Berzerkers2
 {
@@ -15,16 +16,17 @@ namespace Berzerkers2
 
         public static void PrintBattleAndUnits()
         {
-            IRandomProvider Dice = new Dice();
+            Dice Dice1 = new Dice();
 
             //Units
-            OrcWarrior Warrior = new(Dice);
-            ElfWizard Wizard = new(Dice);
-            HumanKnight Knights = new(Dice);
-            HumanArcher Archer = new(Dice);
+            OrcWarrior Warrior = new(Dice1);
+            ElfWizard Wizard = new(Dice1);
+            HumanKnight Knights = new(Dice1);
+            HumanArcher Archer = new(Dice1);
 
             //Units lists
             IRandomProvider randomProvider = new Bag (new List<int> { 0, 1, 2, 3 });
+
             //Units lists
             List<Unit> Units = new List<Unit> { Knights, Archer, Wizard, Warrior };
 

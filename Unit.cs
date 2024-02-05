@@ -2,35 +2,10 @@
 //       Noga Levkovitz
 //---------------------------
 
-using System.Collections.Generic;
+using static Berzerkers2.Interface;
 
 namespace Berzerkers2
 {
-    public interface IRandomProvider
-    {
-        int Roll(int min, int max);
-    }
-
-    public class Bag : IRandomProvider
-    {
-        private List<int> numbers;
-        private int currentIndex;
-
-        public Bag(List<int> numbers)
-        {
-            this.numbers = numbers;
-            currentIndex = 0;
-        }
-
-        public int Roll(int min, int max)
-        {
-            int result = numbers[currentIndex];
-            currentIndex = (currentIndex + 1) % numbers.Count;
-            return result;
-        }
-    }
-    
-
     public struct Dice : IRandomProvider
     {
         public uint Scalar;
@@ -44,14 +19,14 @@ namespace Berzerkers2
             Modifier = modifier;
         }
 
-        public int Roll(int min, int max)
+        public int Roll(uint min, uint max)
         {
             Random random = new Random();
             int result = 0;
 
             for (int i = 0; i < Scalar; i++)
             {
-                result += random.Next(min, max + 1);
+                result += random.Next((int)min, (int)max + 1);
             }
 
             return result + Modifier;
@@ -89,19 +64,13 @@ namespace Berzerkers2
         Sunny
     }
 
-    public interface IUnit
-    {
-        void Attack(Unit target);
-        void Defend(Unit attacker);
-    }
-
     public abstract class Unit
     {
         protected IRandomProvider randomProvider;
 
-        protected Unit(IRandomProvider randomProvider)
+        protected Unit(Dice dmg)
         {
-            this.randomProvider = randomProvider;
+            Damage = dmg;
         }
 
         // Propreties
@@ -118,3 +87,4 @@ namespace Berzerkers2
         public abstract void Defend(Unit attacker);
     }
 }
+

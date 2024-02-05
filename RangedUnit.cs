@@ -6,10 +6,9 @@ namespace Berzerkers2
 {
     public abstract class RangedUnit : Unit
     {
-        int Attackroll;
-        protected RangedUnit(IRandomProvider randomProvider) : base(randomProvider)
+        protected RangedUnit(Dice randomProvider) : base(randomProvider)
         {
-            randomProvider.Roll(1, 101);
+            
         }
 
         // Method to ranged attacks
