@@ -25,15 +25,15 @@ namespace Berzerkers2
                 Unit attacker2 = army2[random.Next(army2.Count)];
 
                 // Simulate the attack and defend
-                attacker1.Attack(attacker1);
+                attacker1.Attack(attacker2);
                 Console.WriteLine($"{attacker1} attacked {attacker2} from range for damage.", Console.ForegroundColor = ConsoleColor.Red);
                 Console.ForegroundColor = ConsoleColor.White;
-                attacker1.Defend(attacker2);
+                attacker1.Defend(attacker1);
 
-                attacker2.Attack(attacker2);
+                attacker2.Attack(attacker1);
                 Console.WriteLine($"{attacker2} attacked {attacker1} from range for damage.", Console.ForegroundColor = ConsoleColor.Red);
                 Console.ForegroundColor = ConsoleColor.White;
-                attacker1.Defend(attacker1);
+                attacker2.Defend(attacker2);
 
                 // Check for weather condition
                 if (random.NextDouble() < 0.1 && steps < 1) 
