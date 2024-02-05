@@ -66,8 +66,6 @@ namespace Berzerkers2
 
     public abstract class Unit
     {
-        //protected IRandomProvider randomProvider;
-
         protected Unit(Dice dmg, Dice defence)
         {
             //The attack damage
