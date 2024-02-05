@@ -2,7 +2,6 @@
 //       Noga Levkovitz
 //---------------------------
 
-using System.Collections.Generic;
 using static Berzerkers2.Interface;
 
 namespace Berzerkers2
