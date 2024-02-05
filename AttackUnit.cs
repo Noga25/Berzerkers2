@@ -6,7 +6,7 @@ namespace Berzerkers2
 {
     public abstract class AttackUnit : Unit
     {
-        protected AttackUnit(Dice randomProvider) : base(randomProvider)
+        protected AttackUnit(Dice dmg, Dice defence) : base(dmg, defence)
         {
         }
 

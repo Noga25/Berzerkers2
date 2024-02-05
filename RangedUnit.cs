@@ -6,9 +6,8 @@ namespace Berzerkers2
 {
     public abstract class RangedUnit : Unit
     {
-        protected RangedUnit(Dice randomProvider) : base(randomProvider)
+        protected RangedUnit(Dice dmg, Dice defence) : base(dmg, defence)
         {
-            
         }
 
         // Method to ranged attacks

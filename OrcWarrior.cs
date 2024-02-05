@@ -6,8 +6,11 @@ namespace Berzerkers2
 {
     public sealed class OrcWarrior : RangedUnit
     {
-        public OrcWarrior(Dice randomProvider) : base(randomProvider)
+        public OrcWarrior(Dice dmg, Dice defence) : base(dmg, defence)
         {
+            dmg = new Dice(2, 7, -1);
+
+            defence = new Dice(1, 6, 1);
         }
 
         // Properties

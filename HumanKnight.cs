@@ -6,7 +6,7 @@ namespace Berzerkers2
 {
     public sealed class HumanKnight : RangedUnit
     {
-        public HumanKnight(Dice randomProvider) : base(randomProvider)
+        public HumanKnight(Dice dmg, Dice defence) : base(dmg, defence)
         {
         }
 

@@ -6,7 +6,7 @@ namespace Berzerkers2
 {
     public sealed class ElfWizard : RangedUnit
     {
-        public ElfWizard(Dice randomProvider) : base(randomProvider)
+        public ElfWizard(Dice dmg, Dice defence) : base(dmg, defence)
         {
         }
 

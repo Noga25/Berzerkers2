@@ -68,18 +68,22 @@ namespace Berzerkers2
     {
         protected IRandomProvider randomProvider;
 
-        protected Unit(Dice dmg)
+        protected Unit(Dice dmg, Dice defence)
         {
+            dmg = new Dice(2, 7, -1);
             Damage = dmg;
+
+            defence = new Dice(1, 6, 1);
+            DefenseRating = defence;
         }
 
         // Propreties
         public virtual int HP { get; set; } = 100;
         public virtual Race UnitRace { get; }
         public virtual int CarryingCapacity { get; } = Random.Shared.Next(1, 20);
-        protected virtual IRandomProvider Damage { get; } = new Dice(2, 7, -1);
+        protected virtual IRandomProvider Damage { get; }
         public virtual IRandomProvider HitChance { get; } = new Dice(2, 8, -1);
-        public virtual IRandomProvider DefenseRating { get; } = new Dice(1, 6, 1);
+        public virtual IRandomProvider DefenseRating { get; }
         public abstract void WeatherEffect(Weather weather);
 
         // Methods
