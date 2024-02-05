@@ -8,7 +8,16 @@ namespace Berzerkers2
     {
         protected RangedUnit(Dice dmg, Dice defence) : base(dmg, defence)
         {
+            //defult value 
+            attackRoll = HitChance.Roll(7, 10);
+
+            //defult value 
+            damageRoll = Damage.Roll(7, 10);
         }
+
+        //Proprtie
+        int attackRoll { get; set; }
+        int damageRoll { get; set; }
 
         // Method to ranged attacks
         public override void Attack(Unit target)
@@ -16,18 +25,18 @@ namespace Berzerkers2
             //Color red for attack
             Console.ForegroundColor = ConsoleColor.Red;
 
-            int attackRoll = HitChance.Roll(0, 10);
+            attackRoll = HitChance.Roll(1, 10);
 
             if (attackRoll > target.DefenseRating.Roll(0, 10))
             {
                 // Successful attack
-                int damageDealt = attackRoll - Damage.Roll(0, 10);
+                int damageDealt = attackRoll - Damage.Roll(0, 10); 
                 target.HP -= damageDealt;
             }
             else
             {
                 // Missed attack
-                Console.WriteLine($"{UnitRace} missed the ranged attack on {target.UnitRace}.");
+                Console.WriteLine($"{UnitRace} missed the ranged attack.");
             }
 
             Console.ForegroundColor = ConsoleColor.White;

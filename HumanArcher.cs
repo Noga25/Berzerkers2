@@ -2,12 +2,18 @@
 //       Noga Levkovitz
 //---------------------------
 
+using static Berzerkers2.Interface;
+
 namespace Berzerkers2
 {
     internal class HumanArcher : RangedUnit
     {
+        protected virtual IRandomProvider DamageWeather { get; }
         public HumanArcher(Dice dmg, Dice defence) : base(dmg, defence)
         {
+            //The damage as a result of extreme weather
+            dmg = new Dice(2, 7, -1);
+            DamageWeather = dmg;
         }
 
         // Properties
@@ -42,9 +48,11 @@ namespace Berzerkers2
 
             Console.WriteLine("HumanArcher character gut burned");
 
-            HP -= 10;
+            int Damage = DamageWeather.Roll(0, 10);
 
-            Console.WriteLine("The weather is " + weather + " HumanArcher lost 10 HP " + HP, Console.ForegroundColor == ConsoleColor.Yellow);
+            HP -= Damage;
+
+            Console.WriteLine("The weather is " + weather + " HumanArcher lost "  + Damage + " HP " + HP, Console.ForegroundColor == ConsoleColor.Yellow);
 
             Console.ForegroundColor = ConsoleColor.White;
         }

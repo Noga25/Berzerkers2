@@ -2,15 +2,18 @@
 //       Noga Levkovitz
 //---------------------------
 
+using static Berzerkers2.Interface;
+
 namespace Berzerkers2
 {
-    public sealed class OrcWarrior : RangedUnit
+    public class OrcWarrior : RangedUnit
     {
+        protected virtual IRandomProvider DamageWeather { get; }
         public OrcWarrior(Dice dmg, Dice defence) : base(dmg, defence)
         {
+            //The damage as a result of extreme weather
             dmg = new Dice(2, 7, -1);
-
-            defence = new Dice(1, 6, 1);
+            DamageWeather = dmg;
         }
 
         // Properties
@@ -47,9 +50,11 @@ namespace Berzerkers2
 
             Console.WriteLine("OrcWarrior has slipped");
 
-            HP -= 10;
+            int Damage = DamageWeather.Roll(0, 10);
 
-            Console.WriteLine("The weather is " + weather + " OrcWarrior lost 10 HP " + HP);
+            HP -= Damage;
+
+            Console.WriteLine("The weather is " + weather + " OrcWarrior lost " + Damage + " HP " + HP);
 
             Console.ForegroundColor = ConsoleColor.White;
         }

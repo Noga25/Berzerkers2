@@ -2,12 +2,18 @@
 //       Noga Levkovitz
 //---------------------------
 
+using static Berzerkers2.Interface;
+
 namespace Berzerkers2
 {
-    public sealed class HumanKnight : RangedUnit
+    public class HumanKnight : RangedUnit
     {
+        protected virtual IRandomProvider DamageWeather { get; }
         public HumanKnight(Dice dmg, Dice defence) : base(dmg, defence)
         {
+            //The damage as a result of extreme weather
+            dmg = new Dice(2, 7, -1);
+            DamageWeather = dmg;
         }
 
         // Properties
@@ -42,9 +48,11 @@ namespace Berzerkers2
 
             Console.WriteLine("HumanKnight gut burned");
 
-            HP -= 10;
+            int Damage = DamageWeather.Roll(0, 10);
 
-            Console.WriteLine("The weather is " + weather + " HumanKnight lost 10 HP " + HP);
+            HP -= Damage;
+
+            Console.WriteLine("The weather is " + weather + " HumanKnight lost " + Damage + " HP " + HP);
 
             Console.ForegroundColor = ConsoleColor.White;
         }

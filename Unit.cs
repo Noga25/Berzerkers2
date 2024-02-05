@@ -29,7 +29,14 @@ namespace Berzerkers2
                 result += random.Next((int)min, (int)max + 1);
             }
 
-            return result + Modifier;
+            if (result + Modifier >= max)
+            {
+                return (int)max;
+            }
+            else
+            {
+                return result + Modifier;
+            }
         }
 
         public override string ToString()
@@ -69,9 +76,11 @@ namespace Berzerkers2
         protected Unit(Dice dmg, Dice defence)
         {
             //The attack damage
+            dmg = new Dice(2, 7, -1);
             Damage = dmg;
 
             //The defence rating
+            defence = new Dice(1, 6, 1);
             DefenseRating = defence;
         }
 
