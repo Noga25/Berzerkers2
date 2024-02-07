@@ -4,12 +4,8 @@
 
 namespace Berzerkers2
 {
-    public abstract class AttackUnit : Unit
+    public abstract class AttackUnit
     {
-        protected AttackUnit(Dice dmg, Dice defence) : base(dmg, defence)
-        {
-        }
-
         private static void ApplyWeatherEffect(List<Unit> army, Weather weatherCondition)
         {
             foreach (var unit in army)
