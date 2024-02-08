@@ -12,11 +12,11 @@ namespace Berzerkers2
         protected virtual IRandomProvider DamageRoll { get; }
         protected RangedUnit(Dice attackRoll, Dice damageRoll) : base(attackRoll, damageRoll)
         {
-            //defult value 
+            //Attack value 
             attackRoll = new Dice(2, 8, -1);
             AttackRoll = attackRoll;
 
-            //defult value 
+            //Damage value 
             damageRoll = new Dice(2, 7, -1);
             DamageRoll = damageRoll;
         }
