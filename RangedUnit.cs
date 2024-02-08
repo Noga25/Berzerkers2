@@ -36,7 +36,7 @@ namespace Berzerkers2
             else
             {
                 // Missed attack
-                Console.WriteLine($"{UnitRace} missed the ranged attack.");
+                Console.WriteLine($"{UnitRace} missed the {target.UnitRace} ranged attack.");
             }
 
             Console.ForegroundColor = ConsoleColor.White;
