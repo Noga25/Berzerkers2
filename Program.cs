@@ -39,7 +39,6 @@ namespace Berzerkers2
             {
                 int UnitNum = randomProvider.Roll(0, 4);
 
-                Console.WriteLine(UnitNum);
                 Unit unit = Units[UnitNum];
 
                 // Distribute units between Army1 and Army2
