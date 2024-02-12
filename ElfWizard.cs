@@ -27,7 +27,7 @@ namespace Berzerkers2
 
             Console.WriteLine("Elf Wizard shield active");
 
-            Console.WriteLine("Shield: " + DefenseRating.Draw(0, 10));
+            Console.WriteLine("Shield: " + DefenseRating.Roll(0, 10));
 
             Console.ForegroundColor = ConsoleColor.White;
         }
@@ -49,7 +49,7 @@ namespace Berzerkers2
 
             Console.WriteLine("ElfWizard gut burned");
 
-            int Damage = DamageWeather.Draw(0, 10);
+            int Damage = DamageWeather.Roll(0, 10);
 
             HP -= Damage;
 

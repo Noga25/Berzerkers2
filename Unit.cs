@@ -19,7 +19,7 @@ namespace Berzerkers2
             Modifier = modifier;
         }
 
-        public int Draw(uint min, uint max)
+        public int Roll(uint min, uint max)
         {
             Random random = new Random();
             int result = 0;
