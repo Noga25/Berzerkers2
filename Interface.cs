@@ -10,7 +10,7 @@ namespace Berzerkers2
     {
         public interface IRandomProvider
         {
-            int Roll(uint min, uint max);
+            int Draw(uint min, uint max);
         }
     }
 
@@ -25,7 +25,7 @@ namespace Berzerkers2
             currentIndex = 0;
         }
 
-        public int Roll(uint min, uint max)
+        public int Draw(uint min, uint max)
         {
             int result = numbers[currentIndex];
             currentIndex = (currentIndex + 1) % numbers.Count;

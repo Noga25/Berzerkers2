@@ -27,10 +27,10 @@ namespace Berzerkers2
             //Color red for attack
             Console.ForegroundColor = ConsoleColor.Red;
 
-            if (AttackRoll.Roll(0, 10) > target.DefenseRating.Roll(0, 10))
+            if (AttackRoll.Draw(0, 10) > target.DefenseRating.Draw(0, 10))
             {
                 // Successful attack
-                int damageDealt = AttackRoll.Roll(6, 10) - DamageRoll.Roll(0, 10); 
+                int damageDealt = AttackRoll.Draw(6, 10) - DamageRoll.Draw(0, 10); 
                 target.HP -= damageDealt;
             }
             else
