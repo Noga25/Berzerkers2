@@ -25,7 +25,7 @@ namespace Berzerkers2
             HumanArcher Archer = new(Dice1, Dice2);
 
             //Units lists
-            IRandomProvider randomProvider = new Bag (new List<int> { 0, 1, 2, 3 });
+            IRandomProvider randomProvider = new Teams (new List<int> { 0, 1, 2, 3 });
 
             //Units lists
             List<Unit> Units = new List<Unit> { Knights, Archer, Wizard, Warrior };

@@ -9,6 +9,9 @@ namespace Berzerkers2
     internal class HumanArcher : RangedUnit
     {
         protected virtual IRandomProvider DamageWeather { get; }
+
+        IRandomProvider bag = new Bag(1, 2);
+
         public HumanArcher(Dice dmg, Dice defence) : base(dmg, defence)
         {
             //The damage as a result of extreme weather
@@ -28,6 +31,8 @@ namespace Berzerkers2
             Console.WriteLine("Human Archer shield active");
 
             Console.WriteLine("Shield: " + DefenseRating.Roll(0, 10));
+
+            Console.WriteLine("It cost coins " + bag.Roll(1, 11));
 
             Console.ForegroundColor = ConsoleColor.White;
         }
